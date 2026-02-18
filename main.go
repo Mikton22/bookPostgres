@@ -25,17 +25,17 @@ func main() {
 	}
 
 	//insert book:
-	book := simple_sql.BookModel {
-		Title: "тихий дон",
-		Author: "шелохов",
-		Review: "отлично",
-		Year: "1940",
-		Read: false,
-		ReadStarted: time.Now(),
+	book := simple_sql.BookModel{
+		Title:        "тихий дон",
+		Author:       "шелохов",
+		Review:       "отлично",
+		Year:         "1940",
+		Read:         false,
+		ReadStarted:  time.Now(),
 		ReadFinished: time.Time{},
 	}
 	if err := simple_sql.InsertRow(ctx, conn, book); err != nil {
-    panic(err)
+		panic(err)
 	}
 
 	// upd book:
@@ -56,7 +56,7 @@ func main() {
 	// 	panic(err)
 	// }
 
-	// terminal
+	// terminal check
 	books, err := simple_sql.SelectRows(ctx, conn)
 	if err != nil {
 		panic(err)
