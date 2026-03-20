@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	
-	// "time"
+	"time"
 
 	"sql/simple_connection"
 	"sql/simple_sql"
@@ -24,18 +24,18 @@ func main() {
 	}
 
 	//insert book:
-	// book := simple_sql.BookModel{
-	// 	Title:        "тихий дон",
-	// 	Author:       "шелохов",
-	// 	Review:       "отлично",
-	// 	Year:         "1940",
-	// 	Read:         false,
-	// 	ReadStarted:  time.Now(),
-	// 	ReadFinished: time.Time{},
-	// }
-	// if err := simple_sql.InsertRow(ctx, conn, book); err != nil {
-	// 	panic(err)
-	// }
+	book := simple_sql.BookModel{
+		Title:        "тихий дон",
+		Author:       "шелохов",
+		Review:       "отлично",
+		Year:         "1940",
+		Read:         false,
+		ReadStarted:  time.Now(),
+		ReadFinished: time.Time{},
+	}
+	if err := simple_sql.InsertRow(ctx, conn, book); err != nil {
+		panic(err)
+	}
 
 	// upd book:
 	// if err := simple_sql.UpdateBook(ctx, conn, simple_sql.BookModel{
