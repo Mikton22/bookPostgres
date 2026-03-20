@@ -3,14 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
-	"time"
+	
+	// "time"
 
 	"sql/simple_connection"
 	"sql/simple_sql"
 	// "github.com/jackc/pgx/v5"
 )
-
-// "postgres://postgres:1010@localhost:5432/postgres"
 
 func main() {
 	ctx := context.Background()
@@ -25,27 +24,27 @@ func main() {
 	}
 
 	//insert book:
-	book := simple_sql.BookModel{
-		Title:        "тихий дон",
-		Author:       "шелохов",
-		Review:       "отлично",
-		Year:         "1940",
-		Read:         false,
-		ReadStarted:  time.Now(),
-		ReadFinished: time.Time{},
-	}
-	if err := simple_sql.InsertRow(ctx, conn, book); err != nil {
-		panic(err)
-	}
+	// book := simple_sql.BookModel{
+	// 	Title:        "тихий дон",
+	// 	Author:       "шелохов",
+	// 	Review:       "отлично",
+	// 	Year:         "1940",
+	// 	Read:         false,
+	// 	ReadStarted:  time.Now(),
+	// 	ReadFinished: time.Time{},
+	// }
+	// if err := simple_sql.InsertRow(ctx, conn, book); err != nil {
+	// 	panic(err)
+	// }
 
 	// upd book:
 	// if err := simple_sql.UpdateBook(ctx, conn, simple_sql.BookModel{
-	// 	ID: 3,
-	// 	Title:"1984",
-	// 	Author: "оруэлл",
-	// 	Year: "1949",
-	// 	Review: "отлично",
-	// 	Read: true,
+	// 	ID:           3,
+	// 	Title:        "1984",
+	// 	Author:       "оруэлл",
+	// 	Year:         "1949",
+	// 	Review:       "отлично",
+	// 	Read:         true,
 	// 	ReadFinished: time.Now(),
 	// }); err != nil {
 	// 	panic(err)
